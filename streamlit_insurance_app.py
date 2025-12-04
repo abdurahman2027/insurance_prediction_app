@@ -13,7 +13,6 @@ st.sidebar.markdown("**Student Name:** Abdu Rahman")
 st.sidebar.markdown("**Student ID:** PIUS20230015")
 
 # --- Load the saved model (pipeline) ---
-@st.cache_resource
 def load_model():
     with open("insurance_model.pkl", "rb") as f:
         return pickle.load(f)
@@ -56,3 +55,4 @@ if st.button("Predict Insurance Charge"):
     except Exception as e:
         st.error("Prediction failed. Please check inputs and model.")
         st.write(e)
+
